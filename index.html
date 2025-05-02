@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Dos criaturas en AR.js</title>
+
+    <!-- A-Frame + AR.js + Extras -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded arjs>
+      <a-marker type="pattern" url="marcadores/patron1.patt">
+        <a-entity position="0 0 0" rotation="-90 90 0" scale="0.02 0.02 0.02">
+          <a-gltf-model 
+            src="modelos/Fox.glb"
+            animation-mixer>
+          </a-gltf-model>
+        </a-entity>
+      </a-marker>
+      <a-marker type="pattern" url="marcadores/patron2.patt">
+        <a-entity position="0 0 0" rotation="0 0 90" scale="0.5 0.5 0.5">
+          <a-gltf-model 
+            src="modelos/Duck.glb"
+            animation-mixer>
+          </a-gltf-model>
+        </a-entity>
+      </a-marker>
+
+      <!-- Cámara -->
+      <a-entity camera></a-entity>
+
+    </a-scene>
+  </body>
+</html>
